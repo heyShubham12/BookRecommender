@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>page1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <style>
+    #masterPlay{
+  cursor: pointer;
+}
+#myProgressBar{
+    width: 93vh;
+    cursor: pointer;
+    margin-left: 21%;
+}
+.container{  
+    text-align: center;
+   
+}
+#audio{
+  
+    position: fixed;
+
+    color: lightgrey;
+   
+ 
+ }
+
+ 
+ #audio-container{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin: 5px;
+    color: lightgrey;
+   
+ }
+     #audio-widget-time{
+   
+   padding:0% 10%;
+ }
+ #audio-widget{
+   display: flex;
+   
+   justify-content: center;
+ 
+ }
+ .audio-widget-pad i{
+   font-size: 2rem;
+   padding:1rem 0rem 0rem 1rem;
+   color: lightgrey;
+   cursor: pointer;
+ }
+ .audio-widget-pad i:hover{
+   color:rgb(215, 26, 26);
+ }
+  </style>
+  
+  </head>
+  <body>
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="{{url_for('static', filename ='Screenshot2.jpg')}}" class="d-block w-100" alt="..." style = "height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot3.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot4.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot5.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot6.jpg')}}" class="d-block w-100" alt="..." style = "height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot7.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot8.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot9.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+      <div class="carousel-item">
+        <img src="{{url_for('static', filename ='Screenshot10.jpg')}}" class="d-block w-100" alt="..." style="height:790px;">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div id="audio-widget-time">
+    <div id="audio-widget">
+      
+     
+      <div class="audio-widget-pad">
+         <i class="fa fa-play-circle fa-3x" style="font-size:3.5rem;padding-top:.2rem;" id = "MasterPlay"></i> </a>
+      </div>
+     
+      
+      <div class="audio-widget-pad">
+        <i class="fa fa-repeat" style="padding-left:3px; margin-left:20px ;" id = "Repeat"></i></a>
+      </div>
+    </div>
+    
+          <input type="range" name="range" id="myProgressBar" value = "0" min="0" max="100">
+        </div>
+    
+     <audio id = "mySong">
+      <source src = "/static/09-Meydan-Contemplate-the-stars.mp3" type = "audio/mp3">
+     </audio>
+
+     <script>
+      
+  let MasterPlay = document.getElementById("MasterPlay")
+  let myProgressBar = document.getElementById('myProgressBar');
+  let audioElement = document.getElementById("mySong")
+  MasterPlay.addEventListener("click", function(){
+      if(audioElement.paused || audioElement.currentTime<=0){
+          audioElement.play();
+          MasterPlay.classList.remove("fa-play-circle");
+          MasterPlay.classList.add("fa-pause-circle");  
+          
+      }
+      else{
+          audioElement.pause();
+          MasterPlay.classList.remove("fa-pause-circle");
+          MasterPlay.classList.add("fa-play-circle");  
+         
+      } 
+  });
+  
+  audioElement.addEventListener('timeupdate', ()=>{ 
+      // Update Seekbar
+      progress = parseInt((audioElement.currentTime/audioElement.duration)* 100); 
+      myProgressBar.value = progress;
+  })
+  
+  myProgressBar.addEventListener('change', ()=>{
+      audioElement.currentTime = myProgressBar.value * audioElement.duration/100;
+  })
+  Repeat.addEventListener("click", function(){
+    audioElement.currentTime = 0;
+});
+    </script>
+    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>

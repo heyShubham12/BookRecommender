@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Contact us</title>
+  
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+<link rel = "icon" href = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbumgwl7paouWeiLLWNZY8WXD4ZYdg2ghQaA&usqp=CAU">
+<script  src="https://kit.fontawesome.com/b3348ae33f.js"
+    crossorigin="anonymous"
+></script>
+</head>
+<style>
+    *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: -webkit-inline-flex;
+
+  align-items: center;
+  min-height: 100vh;
+  background-color: #111;
+}
+.card{
+  position: relative;
+  width: 550px;
+  height: 350px;
+  border-radius: 20px;
+  display: block;
+  
+  transition: 0.5s;
+ 
+}
+.card .circle{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card .circle::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #d83133;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+.card:hover .circle::before{
+  background: #0065c3;
+  clip-path: circle(400px at center);
+}
+
+.card .circle1{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.card .circle1::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #31d0d8;
+  clip-path: circle(120px at center);
+  transition: 0.5s;
+}
+.card:hover .circle1::before{
+  background: #7c1380;
+  clip-path: circle(400px at center);
+}
+
+.card img{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  height: 200px;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.card:hover img{
+  left: 70%;
+  height: 300px;
+}
+.card .content{
+  position: relative;
+  width: 50%;
+  left: 20%;
+  padding: 20px 20px 20px 40px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.card:hover .content{
+  left: 0;
+  opacity: 1;
+  visibility: visible;
+}
+.card .content h2{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 2em;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+.card .content h3{
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 1em;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.card .content p{
+  color: #fff;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    top: 0;
+}
+h1{
+  position:absolute;
+   color: white;
+    text-align: center;
+     top: 0;
+     margin-left: 39%;
+     margin-top: 2px;
+}
+.icons{
+display: flex;
+column-gap: 20px;
+justify-content: center;
+align-items: center;
+margin: 35px 120px;
+
+}
+.card .content a.icon{
+ width: 50px;
+ height: 42px;
+ display: flex;
+ flex-wrap: wrap;
+ text-decoration:none;
+ font-size: 35px;
+ color: rgb(189, 191, 190);
+ border-radius: 500px;
+ outline: 2px solid rgb(241, 244, 245);
+ padding: 4px 7px;
+
+}
+.icon:hover {
+ outline-offset: 4px;
+
+}
+
+.icon--instagram:hover{
+  background-image: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  outline-color: #a02d76;
+}
+.icon--twitter:hover{
+background-color: #1da1f2;
+outline-color: #1da1f2;
+}
+.icon--linkedin:hover{
+  background-color: #0077b5;
+  outline-color: #0077b5;
+}
+.icon--github:hover{
+  background-color: #2ea44f;
+  outline-color: #2ea44f;
+}
+
+
+.text-center{
+  text-align: center;
+}
+</style>
+<body>
+  <h1>Meet Our Team</h1>
+<div class = "container">
+  <div class="card">
+    <div class="circle"></div>
+    <div class="content">
+      <h2>Shubham Mishra</h2>
+      <h3>Frontend</h3><br>
+      <p>Hi, I am Shubham and I am the frontend developer of the team. I have used python flask for web development of our project</p>
+      <div class = "icons text center">
+        <a href = "#" class = "icon icon--instagram">
+            <i class="fa-brands fa-instagram fa-beat"></i>
+        </a>
+        <a href = "#" class = "icon icon--twitter">
+            <i class="fa-brands fa-twitter fa-beat"></i>
+        </a>
+        <a href = "https://www.linkedin.com/in/shubham-mishra-044813140/" class = "icon icon--linkedin" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-beat"></i>
+        </a>
+        <a href = "https://github.com/heyShubham12" class = "icon icon--github" target="_blank">
+            <i class="fa-brands fa-github fa-beat"></i>
+        </a>
+      </div>
+    </div>
+    <img src="/static/a39f490d-9a62-41fc-a4df-587a5251f82c.png" alt="">
+    
+  </div>
+
+  <div class="card">
+    <div class="circle"></div>
+    <div class="content">
+      <h2>Subhash Mishra</h2>
+      <h3>Frontend</h3><br>
+      <p>Hi, I am Subhash and I have done the designing part of our website</p>
+      <div class = "icons text center">
+        <a href = "#" class = "icon icon--instagram">
+            <i class="fa-brands fa-instagram fa-beat"></i>
+        </a>
+        <a href = "#" class = "icon icon--twitter">
+            <i class="fa-brands fa-twitter fa-beat"></i>
+        </a>
+        <a href = "https://www.linkedin.com/in/shubham-mishra-044813140/" class = "icon icon--linkedin" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-beat"></i>
+        </a>
+        <a href = "https://github.com/heyShubham12" class = "icon icon--github" target="_blank">
+            <i class="fa-brands fa-github fa-beat"></i>
+        </a>
+      </div>
+    </div>
+    
+    <img src = "/static/aefe1271-a32a-43fa-a813-fb4e957c02f3.png">
+  </div>
+
+  <div class="card" style="margin-right: 20px;">
+    <div class="circle1"></div>
+    <div class="content">
+      <h2>Vikas Varfa</h2>
+      <h3>Backend</h3><br>
+      <p>Hi, I am Vikas and I did the research part to get along with the already deployed projects.</p>
+      <div class = "icons text center">
+        <a href = "#" class = "icon icon--instagram fa-beat">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href = "#" class = "icon icon--twitter">
+            <i class="fa-brands fa-twitter fa-beat"></i>
+        </a>
+        <a href = "https://www.linkedin.com/in/shubham-mishra-044813140/" class = "icon icon--linkedin" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-beat"></i>
+        </a>
+        <a href = "https://github.com/heyShubham12" class = "icon icon--github" target="_blank">
+            <i class="fa-brands fa-github fa-beat"></i>
+        </a>
+      </div>
+    </div>
+    
+    <img src = "/static/6fc11228-1a37-410e-81a1-fcd10deec7c6.png">
+  </div>
+
+  <div class="card" style="margin-right: 20px;">
+    <div class="circle1"></div>
+    <div class="content">
+      <h2>Yash Mishra</h2>
+      <h3>Backend</h3><br>
+      <p>Hi, I am Yash and worked on the database of the project</p>
+      <div class = "icons text center">
+        <a href = "#" class = "icon icon--instagram">
+            <i class="fa-brands fa-instagram fa-beat"></i>
+        </a>
+        <a href = "#" class = "icon icon--twitter">
+            <i class="fa-brands fa-twitter fa-beat"></i>
+        </a>
+        <a href = "https://www.linkedin.com/in/shubham-mishra-044813140/" class = "icon icon--linkedin" target="_blank">
+            <i class="fa-brands fa-linkedin-in fa-beat"></i>
+        </a>
+        <a href = "https://github.com/heyShubham12" class = "icon icon--github" target="_blank">
+            <i class="fa-brands fa-github fa-beat"></i>
+        </a>
+      </div>
+    </div>
+    
+    
+    <img src = "/static/079ee50e-7995-4923-9c8b-f74c89cfeeb4.png">
+  </div>
+  
+</div>
+
+</body>
+
+</html>
